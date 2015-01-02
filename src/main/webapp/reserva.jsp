@@ -13,24 +13,40 @@
         <h3>Hotel: ${hotel.nome}</h3>
         <h3>Quarto para ${quarto.capacidade} pessoa(s)</h3>
     </div>
-    <form class="col-lg-4 col-lg-offset-4 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" method="POST" action="FazerReserva">
-        <div class="form-group">
-            <input type="text" class="form-control" name="nomePessoa" placeholder="Nome do Hóspede">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="documento" placeholder="RG ou CPF">
-        </div>
-        <div class="form-group">
-            <label>Data de Entrada</label>
-            <input type="date" class="form-control" name="dataEntrada">
-        </div>
-        <div class="form-group">
-            <label>Data de Saída</label>
-            <input type="date" class="form-control" name="dataSaida">
-        </div>
 
-        <input type="submit" class="btn btn-success pull-right" value="Reservar">
-    </form>
+    <c:if test="${requestScope.reserva == null}">
+        <form class="col-lg-4 col-lg-offset-4 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" method="POST" action="FazerReserva">
+            <div class="form-group">
+                <input type="text" class="form-control" name="nomePessoa" placeholder="Nome do Hóspede">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="documento" placeholder="RG ou CPF">
+            </div>
+            <div class="form-group">
+                <label>Data de Entrada</label>
+                <input type="date" class="form-control" name="dataEntrada">
+            </div>
+            <div class="form-group">
+                <label>Data de Saída</label>
+                <input type="date" class="form-control" name="dataSaida">
+            </div>
+
+            <input type="submit" class="btn btn-success pull-right" value="Reservar">
+        </form>
+    </c:if>
+
+
+    <c:if test="${(requestScope.reserva != null) && (requestScope.reserva == true)}">
+        <div class="alert alert-success col-lg-4 col-lg-offset-4 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            Reserva Realizada com sucesso
+        </div>
+    </c:if>
+
+    <c:if test="${(requestScope.reserva != null) && (requestScope.reserva == false)}">
+        <div class="alert alert-success col-lg-4 col-lg-offset-4 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            Reserva Realizada com sucesso
+        </div>
+    </c:if>
 </div>    
 </body>
 </html>

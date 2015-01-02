@@ -45,7 +45,7 @@ public class FazerReserva extends HttpServlet {
             throws ServletException, IOException {
         try {
             request.setCharacterEncoding("UTF-8");
-            
+
             Consumidor consumidor = new Consumidor();
 
             String nomePessoa = request.getParameter("nomePessoa");
@@ -57,16 +57,24 @@ public class FazerReserva extends HttpServlet {
             GregorianCalendar cal = new GregorianCalendar();
 
             cal.setTime(date);
-            XMLGregorianCalendar dataEntrada = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DAY_OF_MONTH)+1, date.getHours(), date.getMinutes(), date.getSeconds(), DatatypeConstants.FIELD_UNDEFINED, cal.getTimeZone().LONG).normalize();
+            XMLGregorianCalendar dataEntrada = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DAY_OF_MONTH) + 1, date.getHours(), date.getMinutes(), date.getSeconds(), DatatypeConstants.FIELD_UNDEFINED, cal.getTimeZone().LONG).normalize();
             //////////
             Date date1 = null;
             date1 = df.parse(request.getParameter("dataSaida"));
             GregorianCalendar cal1 = new GregorianCalendar();
 
             cal1.setTime(date1);
-            XMLGregorianCalendar dataSaida = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal1.get(Calendar.YEAR), cal1.get(Calendar.MONTH) + 1, cal1.get(Calendar.DAY_OF_MONTH)+1, date1.getHours(), date.getMinutes(), date1.getSeconds(), DatatypeConstants.FIELD_UNDEFINED, cal1.getTimeZone().LONG).normalize();
+            XMLGregorianCalendar dataSaida = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal1.get(Calendar.YEAR), cal1.get(Calendar.MONTH) + 1, cal1.get(Calendar.DAY_OF_MONTH) + 1, date1.getHours(), date.getMinutes(), date1.getSeconds(), DatatypeConstants.FIELD_UNDEFINED, cal1.getTimeZone().LONG).normalize();
 
-            consumidor.reservar(((Quarto) request.getSession().getAttribute("quarto")).getId(), nomePessoa, documento, dataEntrada, dataSaida);
+            boolean retornoReserva = consumidor.reservar(((Quarto) request.getSession().getAttribute("quarto")).getId(), nomePessoa, documento, dataEntrada, dataSaida);
+
+            if (retornoReserva == true) {
+                request.setAttribute("reserva", true);
+            } else {
+                request.setAttribute("reserva", false);
+            }
+            request.getRequestDispatcher("reserva.jsp").forward(request, response);
+
         } catch (DatatypeConfigurationException ex) {
             Logger.getLogger(FazerReserva.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParseException ex) {
