@@ -18,7 +18,7 @@
 <div class="container">
     <h1 class="text-center">Hoteis</h1>
     
-    <form class="col-lg-4 col-lg-offset-4 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" action="Reservar">
+    <form class="col-lg-4 col-lg-offset-4 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" method="POST" action="BuscarHotel">
         <div class="form-group">
             <select class="form-control" name="hotel">
                 <option value="" disabled selected>Hoteis</option>

@@ -7,6 +7,7 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.Action;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
@@ -44,6 +45,21 @@ public interface ReservaService {
      * 
      * @param arg0
      * @return
+     *     returns java.util.List<br.com.pos.hotel.services.Quarto>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getListaQuartosDesocupadosPorIdHotel", targetNamespace = "http://services.hotel.pos.com.br/", className = "br.com.pos.hotel.services.GetListaQuartosDesocupadosPorIdHotel")
+    @ResponseWrapper(localName = "getListaQuartosDesocupadosPorIdHotelResponse", targetNamespace = "http://services.hotel.pos.com.br/", className = "br.com.pos.hotel.services.GetListaQuartosDesocupadosPorIdHotelResponse")
+    @Action(input = "http://services.hotel.pos.com.br/ReservaService/getListaQuartosDesocupadosPorIdHotelRequest", output = "http://services.hotel.pos.com.br/ReservaService/getListaQuartosDesocupadosPorIdHotelResponse")
+    public List<Quarto> getListaQuartosDesocupadosPorIdHotel(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
      *     returns br.com.pos.hotel.services.Hotel
      */
     @WebMethod
@@ -54,6 +70,48 @@ public interface ReservaService {
     public Hotel getHotelById(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns br.com.pos.hotel.services.Quarto
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getQuartoByID", targetNamespace = "http://services.hotel.pos.com.br/", className = "br.com.pos.hotel.services.GetQuartoByID")
+    @ResponseWrapper(localName = "getQuartoByIDResponse", targetNamespace = "http://services.hotel.pos.com.br/", className = "br.com.pos.hotel.services.GetQuartoByIDResponse")
+    @Action(input = "http://services.hotel.pos.com.br/ReservaService/getQuartoByIDRequest", output = "http://services.hotel.pos.com.br/ReservaService/getQuartoByIDResponse")
+    public Quarto getQuartoByID(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg4
+     * @param arg3
+     * @param arg2
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod(operationName = "Reservar")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Reservar", targetNamespace = "http://services.hotel.pos.com.br/", className = "br.com.pos.hotel.services.Reservar")
+    @ResponseWrapper(localName = "ReservarResponse", targetNamespace = "http://services.hotel.pos.com.br/", className = "br.com.pos.hotel.services.ReservarResponse")
+    @Action(input = "http://services.hotel.pos.com.br/ReservaService/ReservarRequest", output = "http://services.hotel.pos.com.br/ReservaService/ReservarResponse")
+    public boolean reservar(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2,
+        @WebParam(name = "arg3", targetNamespace = "")
+        XMLGregorianCalendar arg3,
+        @WebParam(name = "arg4", targetNamespace = "")
+        XMLGregorianCalendar arg4);
 
     /**
      * 

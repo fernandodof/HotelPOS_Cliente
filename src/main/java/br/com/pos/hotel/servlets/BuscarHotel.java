@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Fernando
  */
-@WebServlet(name = "Reservar", urlPatterns = {"/Reservar"})
-public class Reservar extends HttpServlet {
+@WebServlet(name = "BuscarHotel", urlPatterns = {"/BuscarHotel"})
+public class BuscarHotel extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -32,8 +32,10 @@ public class Reservar extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        Consumidor consumidor = new Consumidor();
+        request.setCharacterEncoding("UTF-8");
         
+        Consumidor consumidor = new Consumidor();
+
         int idHotel = Integer.parseInt(request.getParameter("hotel"));
         Hotel hotel = consumidor.getHotelById(idHotel);
         request.getSession().setAttribute("hotel", hotel);

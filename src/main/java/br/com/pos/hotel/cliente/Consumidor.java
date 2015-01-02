@@ -10,6 +10,7 @@ import br.com.pos.hotel.services.Quarto;
 import br.com.pos.hotel.services.ReservaService;
 import br.com.pos.hotel.services.ReservaServiceService;
 import java.util.List;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  *
@@ -23,11 +24,23 @@ public class Consumidor {
         return port.getListaQuartosDesocupados(nomeHotel);
     }
     
+    public List<Quarto> getListaDesocupadosHotelPorIdHotel(int idHotel){
+        return port.getListaQuartosDesocupadosPorIdHotel(idHotel);
+    }
+    
     public List<Hotel> getListaHoteis(){
         return port.getHoteis();
     }
     
     public Hotel getHotelById(int idHotel){
         return port.getHotelById(idHotel);
+    }
+    
+    public Quarto getQuartoById(int idQuarto){
+        return port.getQuartoByID(idQuarto);
+    }
+    
+    public boolean reservar(int idQuarto, String nomePessoa, String documento, XMLGregorianCalendar dataEntrada, XMLGregorianCalendar dataSaida){
+        return port.reservar(idQuarto, nomePessoa, documento, dataEntrada , dataSaida);
     }
 }
