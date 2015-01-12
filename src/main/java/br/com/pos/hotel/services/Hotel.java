@@ -23,6 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="nome" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="quartos" type="{http://services.hotel.pos.com.br/}quarto" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="reservas" type="{http://services.hotel.pos.com.br/}reserva" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,7 +37,8 @@ import javax.xml.bind.annotation.XmlType;
     "endereco",
     "id",
     "nome",
-    "quartos"
+    "quartos",
+    "reservas"
 })
 public class Hotel {
 
@@ -45,6 +47,8 @@ public class Hotel {
     protected String nome;
     @XmlElement(nillable = true)
     protected List<Quarto> quartos;
+    @XmlElement(nillable = true)
+    protected List<Reserva> reservas;
 
     /**
      * Gets the value of the endereco property.
@@ -137,6 +141,35 @@ public class Hotel {
             quartos = new ArrayList<Quarto>();
         }
         return this.quartos;
+    }
+
+    /**
+     * Gets the value of the reservas property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the reservas property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getReservas().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Reserva }
+     * 
+     * 
+     */
+    public List<Reserva> getReservas() {
+        if (reservas == null) {
+            reservas = new ArrayList<Reserva>();
+        }
+        return this.reservas;
     }
 
 }

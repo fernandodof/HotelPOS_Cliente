@@ -26,15 +26,17 @@ public class ObjectFactory {
 
     private final static QName _GetListaQuartosDesocupadosPorIdHotelResponse_QNAME = new QName("http://services.hotel.pos.com.br/", "getListaQuartosDesocupadosPorIdHotelResponse");
     private final static QName _Reservar_QNAME = new QName("http://services.hotel.pos.com.br/", "Reservar");
+    private final static QName _GetHotelByIdResponse_QNAME = new QName("http://services.hotel.pos.com.br/", "getHotelByIdResponse");
+    private final static QName _GetListaReservas_QNAME = new QName("http://services.hotel.pos.com.br/", "getListaReservas");
+    private final static QName _GetListaReservasResponse_QNAME = new QName("http://services.hotel.pos.com.br/", "getListaReservasResponse");
     private final static QName _GetHotelById_QNAME = new QName("http://services.hotel.pos.com.br/", "getHotelById");
     private final static QName _GetHoteisResponse_QNAME = new QName("http://services.hotel.pos.com.br/", "getHoteisResponse");
     private final static QName _GetListaQuartosDesocupados_QNAME = new QName("http://services.hotel.pos.com.br/", "getListaQuartosDesocupados");
-    private final static QName _GetListaQuartosDesocupadosPorIdHotel_QNAME = new QName("http://services.hotel.pos.com.br/", "getListaQuartosDesocupadosPorIdHotel");
     private final static QName _GetQuartoByIDResponse_QNAME = new QName("http://services.hotel.pos.com.br/", "getQuartoByIDResponse");
-    private final static QName _GetHotelByIdResponse_QNAME = new QName("http://services.hotel.pos.com.br/", "getHotelByIdResponse");
-    private final static QName _ReservarResponse_QNAME = new QName("http://services.hotel.pos.com.br/", "ReservarResponse");
-    private final static QName _GetHoteis_QNAME = new QName("http://services.hotel.pos.com.br/", "getHoteis");
+    private final static QName _GetListaQuartosDesocupadosPorIdHotel_QNAME = new QName("http://services.hotel.pos.com.br/", "getListaQuartosDesocupadosPorIdHotel");
     private final static QName _GetListaQuartosDesocupadosResponse_QNAME = new QName("http://services.hotel.pos.com.br/", "getListaQuartosDesocupadosResponse");
+    private final static QName _GetHoteis_QNAME = new QName("http://services.hotel.pos.com.br/", "getHoteis");
+    private final static QName _ReservarResponse_QNAME = new QName("http://services.hotel.pos.com.br/", "ReservarResponse");
     private final static QName _GetQuartoByID_QNAME = new QName("http://services.hotel.pos.com.br/", "getQuartoByID");
 
     /**
@@ -42,14 +44,6 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link GetHotelById }
-     * 
-     */
-    public GetHotelById createGetHotelById() {
-        return new GetHotelById();
     }
 
     /**
@@ -69,6 +63,38 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetHotelByIdResponse }
+     * 
+     */
+    public GetHotelByIdResponse createGetHotelByIdResponse() {
+        return new GetHotelByIdResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetListaReservas }
+     * 
+     */
+    public GetListaReservas createGetListaReservas() {
+        return new GetListaReservas();
+    }
+
+    /**
+     * Create an instance of {@link GetHotelById }
+     * 
+     */
+    public GetHotelById createGetHotelById() {
+        return new GetHotelById();
+    }
+
+    /**
+     * Create an instance of {@link GetListaReservasResponse }
+     * 
+     */
+    public GetListaReservasResponse createGetListaReservasResponse() {
+        return new GetListaReservasResponse();
+    }
+
+    /**
      * Create an instance of {@link GetListaQuartosDesocupados }
      * 
      */
@@ -82,14 +108,6 @@ public class ObjectFactory {
      */
     public GetHoteisResponse createGetHoteisResponse() {
         return new GetHoteisResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetHotelByIdResponse }
-     * 
-     */
-    public GetHotelByIdResponse createGetHotelByIdResponse() {
-        return new GetHotelByIdResponse();
     }
 
     /**
@@ -117,11 +135,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetListaQuartosDesocupadosResponse }
+     * Create an instance of {@link ReservarResponse }
      * 
      */
-    public GetListaQuartosDesocupadosResponse createGetListaQuartosDesocupadosResponse() {
-        return new GetListaQuartosDesocupadosResponse();
+    public ReservarResponse createReservarResponse() {
+        return new ReservarResponse();
     }
 
     /**
@@ -133,11 +151,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ReservarResponse }
+     * Create an instance of {@link GetListaQuartosDesocupadosResponse }
      * 
      */
-    public ReservarResponse createReservarResponse() {
-        return new ReservarResponse();
+    public GetListaQuartosDesocupadosResponse createGetListaQuartosDesocupadosResponse() {
+        return new GetListaQuartosDesocupadosResponse();
     }
 
     /**
@@ -165,6 +183,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Reserva }
+     * 
+     */
+    public Reserva createReserva() {
+        return new Reserva();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetListaQuartosDesocupadosPorIdHotelResponse }{@code >}}
      * 
      */
@@ -180,6 +206,33 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://services.hotel.pos.com.br/", name = "Reservar")
     public JAXBElement<Reservar> createReservar(Reservar value) {
         return new JAXBElement<Reservar>(_Reservar_QNAME, Reservar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetHotelByIdResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.hotel.pos.com.br/", name = "getHotelByIdResponse")
+    public JAXBElement<GetHotelByIdResponse> createGetHotelByIdResponse(GetHotelByIdResponse value) {
+        return new JAXBElement<GetHotelByIdResponse>(_GetHotelByIdResponse_QNAME, GetHotelByIdResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetListaReservas }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.hotel.pos.com.br/", name = "getListaReservas")
+    public JAXBElement<GetListaReservas> createGetListaReservas(GetListaReservas value) {
+        return new JAXBElement<GetListaReservas>(_GetListaReservas_QNAME, GetListaReservas.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetListaReservasResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.hotel.pos.com.br/", name = "getListaReservasResponse")
+    public JAXBElement<GetListaReservasResponse> createGetListaReservasResponse(GetListaReservasResponse value) {
+        return new JAXBElement<GetListaReservasResponse>(_GetListaReservasResponse_QNAME, GetListaReservasResponse.class, null, value);
     }
 
     /**
@@ -210,15 +263,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetListaQuartosDesocupadosPorIdHotel }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.hotel.pos.com.br/", name = "getListaQuartosDesocupadosPorIdHotel")
-    public JAXBElement<GetListaQuartosDesocupadosPorIdHotel> createGetListaQuartosDesocupadosPorIdHotel(GetListaQuartosDesocupadosPorIdHotel value) {
-        return new JAXBElement<GetListaQuartosDesocupadosPorIdHotel>(_GetListaQuartosDesocupadosPorIdHotel_QNAME, GetListaQuartosDesocupadosPorIdHotel.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetQuartoByIDResponse }{@code >}}
      * 
      */
@@ -228,21 +272,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetHotelByIdResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetListaQuartosDesocupadosPorIdHotel }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://services.hotel.pos.com.br/", name = "getHotelByIdResponse")
-    public JAXBElement<GetHotelByIdResponse> createGetHotelByIdResponse(GetHotelByIdResponse value) {
-        return new JAXBElement<GetHotelByIdResponse>(_GetHotelByIdResponse_QNAME, GetHotelByIdResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://services.hotel.pos.com.br/", name = "getListaQuartosDesocupadosPorIdHotel")
+    public JAXBElement<GetListaQuartosDesocupadosPorIdHotel> createGetListaQuartosDesocupadosPorIdHotel(GetListaQuartosDesocupadosPorIdHotel value) {
+        return new JAXBElement<GetListaQuartosDesocupadosPorIdHotel>(_GetListaQuartosDesocupadosPorIdHotel_QNAME, GetListaQuartosDesocupadosPorIdHotel.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ReservarResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetListaQuartosDesocupadosResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://services.hotel.pos.com.br/", name = "ReservarResponse")
-    public JAXBElement<ReservarResponse> createReservarResponse(ReservarResponse value) {
-        return new JAXBElement<ReservarResponse>(_ReservarResponse_QNAME, ReservarResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://services.hotel.pos.com.br/", name = "getListaQuartosDesocupadosResponse")
+    public JAXBElement<GetListaQuartosDesocupadosResponse> createGetListaQuartosDesocupadosResponse(GetListaQuartosDesocupadosResponse value) {
+        return new JAXBElement<GetListaQuartosDesocupadosResponse>(_GetListaQuartosDesocupadosResponse_QNAME, GetListaQuartosDesocupadosResponse.class, null, value);
     }
 
     /**
@@ -255,12 +299,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetListaQuartosDesocupadosResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReservarResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://services.hotel.pos.com.br/", name = "getListaQuartosDesocupadosResponse")
-    public JAXBElement<GetListaQuartosDesocupadosResponse> createGetListaQuartosDesocupadosResponse(GetListaQuartosDesocupadosResponse value) {
-        return new JAXBElement<GetListaQuartosDesocupadosResponse>(_GetListaQuartosDesocupadosResponse_QNAME, GetListaQuartosDesocupadosResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://services.hotel.pos.com.br/", name = "ReservarResponse")
+    public JAXBElement<ReservarResponse> createReservarResponse(ReservarResponse value) {
+        return new JAXBElement<ReservarResponse>(_ReservarResponse_QNAME, ReservarResponse.class, null, value);
     }
 
     /**

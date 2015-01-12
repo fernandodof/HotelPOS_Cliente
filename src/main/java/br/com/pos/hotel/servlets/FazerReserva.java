@@ -6,6 +6,7 @@
 package br.com.pos.hotel.servlets;
 
 import br.com.pos.hotel.cliente.Consumidor;
+import br.com.pos.hotel.services.Hotel;
 import br.com.pos.hotel.services.Quarto;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -66,7 +67,8 @@ public class FazerReserva extends HttpServlet {
             cal1.setTime(date1);
             XMLGregorianCalendar dataSaida = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal1.get(Calendar.YEAR), cal1.get(Calendar.MONTH) + 1, cal1.get(Calendar.DAY_OF_MONTH) + 1, date1.getHours(), date.getMinutes(), date1.getSeconds(), DatatypeConstants.FIELD_UNDEFINED, cal1.getTimeZone().LONG).normalize();
 
-            boolean retornoReserva = consumidor.reservar(((Quarto) request.getSession().getAttribute("quarto")).getId(), nomePessoa, documento, dataEntrada, dataSaida);
+            boolean retornoReserva = consumidor.reservar(((Hotel) request.getSession().getAttribute("hotel")).getId() ,
+                    ((Quarto) request.getSession().getAttribute("quarto")).getId(), nomePessoa, documento, dataEntrada, dataSaida);
 
             if (retornoReserva == true) {
                 request.setAttribute("reserva", true);

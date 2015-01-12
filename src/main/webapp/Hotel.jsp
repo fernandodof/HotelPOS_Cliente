@@ -4,20 +4,27 @@
     Author     : Fernando
 --%>
 
+<%@page import="br.com.pos.hotel.services.Reserva"%>
 <%@page import="br.com.pos.hotel.services.Hotel"%>
 <%@page import="java.util.List"%>
 <%@page import="br.com.pos.hotel.cliente.Consumidor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="header.jsp" %>
 
 <%
     Consumidor consumidor = new Consumidor();
     List<Hotel> hoteis = consumidor.getListaHoteis();
     pageContext.setAttribute("hoteis", hoteis);
+
+    List<Reserva> reservas = consumidor.getListaReservas();
+    pageContext.setAttribute("reservas", reservas);
+
 %>
+<link href="css/hotel.css" rel="stylesheet">
 <div class="container">
     <h1 class="text-center">Hoteis</h1>
-    
+
     <form class="col-lg-4 col-lg-offset-4 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" method="POST" action="BuscarHotel">
         <div class="form-group">
             <select class="form-control" name="hotel">
@@ -29,6 +36,17 @@
         </div>
         <input type="submit" class="btn btn-success pull-right" value="Continuar">
     </form>
+
+
+    <div id="reservas" class="col-lg-4 col-lg-offset-4 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <h3>RESERVAS</h3>
+        <c:forEach items="${reservas}" var="reserva">
+            <p>Reserva: <big>${reserva.id}</big></p>
+            <p>${reserva.dataSaida}</p>
+            <p>${reserva.dataSaida}</p>
+        </c:forEach>
+    </div>
+
 </div>
 
 </body>

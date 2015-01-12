@@ -7,6 +7,7 @@ package br.com.pos.hotel.cliente;
 
 import br.com.pos.hotel.services.Hotel;
 import br.com.pos.hotel.services.Quarto;
+import br.com.pos.hotel.services.Reserva;
 import br.com.pos.hotel.services.ReservaService;
 import br.com.pos.hotel.services.ReservaServiceService;
 import java.util.List;
@@ -40,7 +41,11 @@ public class Consumidor {
         return port.getQuartoByID(idQuarto);
     }
     
-    public boolean reservar(int idQuarto, String nomePessoa, String documento, XMLGregorianCalendar dataEntrada, XMLGregorianCalendar dataSaida){
-        return port.reservar(idQuarto, nomePessoa, documento, dataEntrada , dataSaida);
+    public boolean reservar(int idHotel,int idQuarto, String nomePessoa, String documento, XMLGregorianCalendar dataEntrada, XMLGregorianCalendar dataSaida){
+        return port.reservar(idHotel ,idQuarto, nomePessoa, documento, dataEntrada , dataSaida);
+    }
+    
+    public List<Reserva> getListaReservas(){
+        return port.getListaReservas();
     }
 }
