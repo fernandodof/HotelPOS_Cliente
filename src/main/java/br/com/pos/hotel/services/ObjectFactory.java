@@ -159,6 +159,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Pessoa }
+     * 
+     */
+    public Pessoa createPessoa() {
+        return new Pessoa();
+    }
+
+    /**
      * Create an instance of {@link Quarto }
      * 
      */

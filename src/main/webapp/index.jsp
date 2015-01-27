@@ -28,10 +28,10 @@
                         <div class="panel-body">
                             <form method="POST" action="Logar">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Login" name="login">
+                                    <input type="text" class="form-control" placeholder="Login" name="login" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Senha" name="senha" value="">
+                                    <input type="password" class="form-control" placeholder="Senha" name="senha" required>
                                 </div>
                                 <input class="btn btn-lg btn-success btn-block" type="submit" value="Entrar">
                             </form>
