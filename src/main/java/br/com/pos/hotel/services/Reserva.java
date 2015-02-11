@@ -9,9 +9,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Java class for reserva complex type.
+ * <p>Classe Java de reserva complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="reserva">
@@ -50,7 +50,7 @@ public class Reserva {
     protected Quarto quarto;
 
     /**
-     * Gets the value of the dataEntrada property.
+     * Obtém o valor da propriedade dataEntrada.
      * 
      * @return
      *     possible object is
@@ -62,7 +62,7 @@ public class Reserva {
     }
 
     /**
-     * Sets the value of the dataEntrada property.
+     * Define o valor da propriedade dataEntrada.
      * 
      * @param value
      *     allowed object is
@@ -74,7 +74,7 @@ public class Reserva {
     }
 
     /**
-     * Gets the value of the dataSaida property.
+     * Obtém o valor da propriedade dataSaida.
      * 
      * @return
      *     possible object is
@@ -86,7 +86,7 @@ public class Reserva {
     }
 
     /**
-     * Sets the value of the dataSaida property.
+     * Define o valor da propriedade dataSaida.
      * 
      * @param value
      *     allowed object is
@@ -98,7 +98,7 @@ public class Reserva {
     }
 
     /**
-     * Gets the value of the id property.
+     * Obtém o valor da propriedade id.
      * 
      */
     public int getId() {
@@ -106,7 +106,7 @@ public class Reserva {
     }
 
     /**
-     * Sets the value of the id property.
+     * Define o valor da propriedade id.
      * 
      */
     public void setId(int value) {
@@ -114,7 +114,7 @@ public class Reserva {
     }
 
     /**
-     * Gets the value of the pessoa property.
+     * Obtém o valor da propriedade pessoa.
      * 
      * @return
      *     possible object is
@@ -126,7 +126,7 @@ public class Reserva {
     }
 
     /**
-     * Sets the value of the pessoa property.
+     * Define o valor da propriedade pessoa.
      * 
      * @param value
      *     allowed object is
@@ -138,7 +138,7 @@ public class Reserva {
     }
 
     /**
-     * Gets the value of the quarto property.
+     * Obtém o valor da propriedade quarto.
      * 
      * @return
      *     possible object is
@@ -150,7 +150,7 @@ public class Reserva {
     }
 
     /**
-     * Sets the value of the quarto property.
+     * Define o valor da propriedade quarto.
      * 
      * @param value
      *     allowed object is

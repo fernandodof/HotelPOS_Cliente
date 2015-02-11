@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for endereco complex type.
+ * <p>Classe Java de endereco complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="endereco">
@@ -49,7 +49,7 @@ public class Endereco {
     protected String numero;
 
     /**
-     * Gets the value of the cep property.
+     * Obtém o valor da propriedade cep.
      * 
      * @return
      *     possible object is
@@ -61,7 +61,7 @@ public class Endereco {
     }
 
     /**
-     * Sets the value of the cep property.
+     * Define o valor da propriedade cep.
      * 
      * @param value
      *     allowed object is
@@ -73,7 +73,7 @@ public class Endereco {
     }
 
     /**
-     * Gets the value of the cidade property.
+     * Obtém o valor da propriedade cidade.
      * 
      * @return
      *     possible object is
@@ -85,7 +85,7 @@ public class Endereco {
     }
 
     /**
-     * Sets the value of the cidade property.
+     * Define o valor da propriedade cidade.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +97,7 @@ public class Endereco {
     }
 
     /**
-     * Gets the value of the estado property.
+     * Obtém o valor da propriedade estado.
      * 
      * @return
      *     possible object is
@@ -109,7 +109,7 @@ public class Endereco {
     }
 
     /**
-     * Sets the value of the estado property.
+     * Define o valor da propriedade estado.
      * 
      * @param value
      *     allowed object is
@@ -121,7 +121,7 @@ public class Endereco {
     }
 
     /**
-     * Gets the value of the id property.
+     * Obtém o valor da propriedade id.
      * 
      */
     public int getId() {
@@ -129,7 +129,7 @@ public class Endereco {
     }
 
     /**
-     * Sets the value of the id property.
+     * Define o valor da propriedade id.
      * 
      */
     public void setId(int value) {
@@ -137,7 +137,7 @@ public class Endereco {
     }
 
     /**
-     * Gets the value of the logradouro property.
+     * Obtém o valor da propriedade logradouro.
      * 
      * @return
      *     possible object is
@@ -149,7 +149,7 @@ public class Endereco {
     }
 
     /**
-     * Sets the value of the logradouro property.
+     * Define o valor da propriedade logradouro.
      * 
      * @param value
      *     allowed object is
@@ -161,7 +161,7 @@ public class Endereco {
     }
 
     /**
-     * Gets the value of the numero property.
+     * Obtém o valor da propriedade numero.
      * 
      * @return
      *     possible object is
@@ -173,7 +173,7 @@ public class Endereco {
     }
 
     /**
-     * Sets the value of the numero property.
+     * Define o valor da propriedade numero.
      * 
      * @param value
      *     allowed object is

@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for quarto complex type.
+ * <p>Classe Java de quarto complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="quarto">
@@ -43,7 +43,7 @@ public class Quarto {
     protected double valor;
 
     /**
-     * Gets the value of the capacidade property.
+     * Obtém o valor da propriedade capacidade.
      * 
      */
     public int getCapacidade() {
@@ -51,7 +51,7 @@ public class Quarto {
     }
 
     /**
-     * Sets the value of the capacidade property.
+     * Define o valor da propriedade capacidade.
      * 
      */
     public void setCapacidade(int value) {
@@ -59,7 +59,7 @@ public class Quarto {
     }
 
     /**
-     * Gets the value of the id property.
+     * Obtém o valor da propriedade id.
      * 
      */
     public int getId() {
@@ -67,7 +67,7 @@ public class Quarto {
     }
 
     /**
-     * Sets the value of the id property.
+     * Define o valor da propriedade id.
      * 
      */
     public void setId(int value) {
@@ -75,7 +75,7 @@ public class Quarto {
     }
 
     /**
-     * Gets the value of the ocupado property.
+     * Obtém o valor da propriedade ocupado.
      * 
      */
     public boolean isOcupado() {
@@ -83,7 +83,7 @@ public class Quarto {
     }
 
     /**
-     * Sets the value of the ocupado property.
+     * Define o valor da propriedade ocupado.
      * 
      */
     public void setOcupado(boolean value) {
@@ -91,7 +91,7 @@ public class Quarto {
     }
 
     /**
-     * Gets the value of the valor property.
+     * Obtém o valor da propriedade valor.
      * 
      */
     public double getValor() {
@@ -99,7 +99,7 @@ public class Quarto {
     }
 
     /**
-     * Sets the value of the valor property.
+     * Define o valor da propriedade valor.
      * 
      */
     public void setValor(double value) {

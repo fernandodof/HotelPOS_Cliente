@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for pessoa complex type.
+ * <p>Classe Java de pessoa complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="pessoa">
@@ -37,7 +37,7 @@ public class Pessoa {
     protected String nome;
 
     /**
-     * Gets the value of the documento property.
+     * Obtém o valor da propriedade documento.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class Pessoa {
     }
 
     /**
-     * Sets the value of the documento property.
+     * Define o valor da propriedade documento.
      * 
      * @param value
      *     allowed object is
@@ -61,7 +61,7 @@ public class Pessoa {
     }
 
     /**
-     * Gets the value of the nome property.
+     * Obtém o valor da propriedade nome.
      * 
      * @return
      *     possible object is
@@ -73,7 +73,7 @@ public class Pessoa {
     }
 
     /**
-     * Sets the value of the nome property.
+     * Define o valor da propriedade nome.
      * 
      * @param value
      *     allowed object is

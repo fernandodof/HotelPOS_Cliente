@@ -3,8 +3,7 @@ package br.com.pos.hotel.dao;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
-import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
+import javax.persistence.*;
 
 /**
  *
@@ -31,13 +30,13 @@ public interface GenericDAO<T> {
 
     public Object executeNativeQuery(String query);
 
-    public T getSingleResultOfNamedQuery(String namedQuery, Map<String, Object> map) throws NoResultException;
+    public T getSingleResultOfNamedQuery(String namedQuery, Map<String, Object> map);
 
-    public T getSingleResultOfNamedQuery(String namedQuery) throws NoResultException;
+    public T getSingleResultOfNamedQuery(String namedQuery);
 
-    public List<T> getListResultOfNamedQuery(String namedQuery) throws NoResultException;
+    public List<T> getListResultOfNamedQuery(String namedQuery);
 
-    public List<T> getListResultOfNamedQuery(String namedQuery, Map<String, Object> map) throws NoResultException;
+    public List<T> getListResultOfNamedQuery(String namedQuery, Map<String, Object> map);
 
     public List<T> getListResultOfNamedQueryWithLimit(String namedQuery, int min, int max);
 }

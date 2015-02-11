@@ -18,7 +18,7 @@
 
 
                 <c:choose>
-                    <c:when test="${requestScope.hotelSalvo != null || requestScope.hotelSalvo == false}">
+                    <c:when test="${requestScope.hotelSalvo != null && requestScope.hotelSalvo == false}">
                         <div class="center-block erroLogin alert alert-dismissable alert-danger">
                             <button type="button" class="close" data-dismiss="alert">×</button>
                             Erro ao savar o hotel

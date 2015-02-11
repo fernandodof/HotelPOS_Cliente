@@ -9,9 +9,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Java class for Reservar complex type.
+ * <p>Classe Java de Reservar complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="Reservar">
@@ -53,7 +53,7 @@ public class Reservar {
     protected XMLGregorianCalendar arg5;
 
     /**
-     * Gets the value of the arg0 property.
+     * Obtém o valor da propriedade arg0.
      * 
      */
     public int getArg0() {
@@ -61,7 +61,7 @@ public class Reservar {
     }
 
     /**
-     * Sets the value of the arg0 property.
+     * Define o valor da propriedade arg0.
      * 
      */
     public void setArg0(int value) {
@@ -69,7 +69,7 @@ public class Reservar {
     }
 
     /**
-     * Gets the value of the arg1 property.
+     * Obtém o valor da propriedade arg1.
      * 
      */
     public int getArg1() {
@@ -77,7 +77,7 @@ public class Reservar {
     }
 
     /**
-     * Sets the value of the arg1 property.
+     * Define o valor da propriedade arg1.
      * 
      */
     public void setArg1(int value) {
@@ -85,7 +85,7 @@ public class Reservar {
     }
 
     /**
-     * Gets the value of the arg2 property.
+     * Obtém o valor da propriedade arg2.
      * 
      * @return
      *     possible object is
@@ -97,7 +97,7 @@ public class Reservar {
     }
 
     /**
-     * Sets the value of the arg2 property.
+     * Define o valor da propriedade arg2.
      * 
      * @param value
      *     allowed object is
@@ -109,7 +109,7 @@ public class Reservar {
     }
 
     /**
-     * Gets the value of the arg3 property.
+     * Obtém o valor da propriedade arg3.
      * 
      * @return
      *     possible object is
@@ -121,7 +121,7 @@ public class Reservar {
     }
 
     /**
-     * Sets the value of the arg3 property.
+     * Define o valor da propriedade arg3.
      * 
      * @param value
      *     allowed object is
@@ -133,7 +133,7 @@ public class Reservar {
     }
 
     /**
-     * Gets the value of the arg4 property.
+     * Obtém o valor da propriedade arg4.
      * 
      * @return
      *     possible object is
@@ -145,7 +145,7 @@ public class Reservar {
     }
 
     /**
-     * Sets the value of the arg4 property.
+     * Define o valor da propriedade arg4.
      * 
      * @param value
      *     allowed object is
@@ -157,7 +157,7 @@ public class Reservar {
     }
 
     /**
-     * Gets the value of the arg5 property.
+     * Obtém o valor da propriedade arg5.
      * 
      * @return
      *     possible object is
@@ -169,7 +169,7 @@ public class Reservar {
     }
 
     /**
-     * Sets the value of the arg5 property.
+     * Define o valor da propriedade arg5.
      * 
      * @param value
      *     allowed object is

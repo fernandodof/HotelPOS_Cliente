@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for getListaQuartosDesocupadosPorIdHotel complex type.
+ * <p>Classe Java de getListaQuartosDesocupadosPorIdHotel complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="getListaQuartosDesocupadosPorIdHotel">
@@ -34,7 +34,7 @@ public class GetListaQuartosDesocupadosPorIdHotel {
     protected int arg0;
 
     /**
-     * Gets the value of the arg0 property.
+     * Obtém o valor da propriedade arg0.
      * 
      */
     public int getArg0() {
@@ -42,7 +42,7 @@ public class GetListaQuartosDesocupadosPorIdHotel {
     }
 
     /**
-     * Sets the value of the arg0 property.
+     * Define o valor da propriedade arg0.
      * 
      */
     public void setArg0(int value) {

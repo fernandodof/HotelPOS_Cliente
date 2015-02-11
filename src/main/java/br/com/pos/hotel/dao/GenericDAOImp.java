@@ -30,7 +30,7 @@ public class GenericDAOImp<T> implements GenericDAO<T> {
 
     public EntityManager getEntityManager() {
         if (em == null) {
-            factory = Persistence.createEntityManagerFactory("HotelPOS");
+            factory = Persistence.createEntityManagerFactory("HotelPOS_Cliente");
             em = factory.createEntityManager();
         }
         return em;

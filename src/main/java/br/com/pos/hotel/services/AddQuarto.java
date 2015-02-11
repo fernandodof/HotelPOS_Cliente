@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for addQuarto complex type.
+ * <p>Classe Java de addQuarto complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="addQuarto">
@@ -37,7 +37,7 @@ public class AddQuarto {
     protected Quarto arg1;
 
     /**
-     * Gets the value of the arg0 property.
+     * Obtém o valor da propriedade arg0.
      * 
      */
     public int getArg0() {
@@ -45,7 +45,7 @@ public class AddQuarto {
     }
 
     /**
-     * Sets the value of the arg0 property.
+     * Define o valor da propriedade arg0.
      * 
      */
     public void setArg0(int value) {
@@ -53,7 +53,7 @@ public class AddQuarto {
     }
 
     /**
-     * Gets the value of the arg1 property.
+     * Obtém o valor da propriedade arg1.
      * 
      * @return
      *     possible object is
@@ -65,7 +65,7 @@ public class AddQuarto {
     }
 
     /**
-     * Sets the value of the arg1 property.
+     * Define o valor da propriedade arg1.
      * 
      * @param value
      *     allowed object is

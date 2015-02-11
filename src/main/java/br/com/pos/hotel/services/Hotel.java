@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for hotel complex type.
+ * <p>Classe Java de hotel complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="hotel">
@@ -51,7 +51,7 @@ public class Hotel {
     protected List<Reserva> reservas;
 
     /**
-     * Gets the value of the endereco property.
+     * Obtém o valor da propriedade endereco.
      * 
      * @return
      *     possible object is
@@ -63,7 +63,7 @@ public class Hotel {
     }
 
     /**
-     * Sets the value of the endereco property.
+     * Define o valor da propriedade endereco.
      * 
      * @param value
      *     allowed object is
@@ -75,7 +75,7 @@ public class Hotel {
     }
 
     /**
-     * Gets the value of the id property.
+     * Obtém o valor da propriedade id.
      * 
      */
     public int getId() {
@@ -83,7 +83,7 @@ public class Hotel {
     }
 
     /**
-     * Sets the value of the id property.
+     * Define o valor da propriedade id.
      * 
      */
     public void setId(int value) {
@@ -91,7 +91,7 @@ public class Hotel {
     }
 
     /**
-     * Gets the value of the nome property.
+     * Obtém o valor da propriedade nome.
      * 
      * @return
      *     possible object is
@@ -103,7 +103,7 @@ public class Hotel {
     }
 
     /**
-     * Sets the value of the nome property.
+     * Define o valor da propriedade nome.
      * 
      * @param value
      *     allowed object is
