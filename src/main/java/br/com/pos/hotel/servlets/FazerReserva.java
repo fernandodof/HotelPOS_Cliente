@@ -70,7 +70,7 @@ public class FazerReserva extends HttpServlet {
             boolean retornoReserva = consumidor.reservar(((Hotel) request.getSession().getAttribute("hotel")).getId() ,
                     ((Quarto) request.getSession().getAttribute("quarto")).getId(), nomePessoa, documento, dataEntrada, dataSaida);
 
-            if (retornoReserva == true) {
+            if (retornoReserva) {
                 request.setAttribute("reserva", true);
             } else {
                 request.setAttribute("reserva", false);

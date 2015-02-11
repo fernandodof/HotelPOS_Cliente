@@ -18,10 +18,9 @@
     pageContext.setAttribute("hoteis", hoteis);
 
     List<Reserva> reservas = consumidor.getListaReservas();
-    pageContext.setAttribute("reservas", reservas);
-
+    pageContext.setAttribute("reservas", reservas);    
+    
 %>
-<link href="css/hotel.css" rel="stylesheet">
 <div class="container">
     <h1 class="text-center">Hoteis</h1>
 
@@ -37,14 +36,21 @@
         <input type="submit" class="btn btn-success pull-right" value="Continuar">
     </form>
 
-
-    <div id="reservas" class="col-lg-4 col-lg-offset-4 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-        <h3>RESERVAS</h3>
-        <c:forEach items="${reservas}" var="reserva">
-            <p>Reserva: <big>${reserva.id}</big></p>
-            <p>${reserva.dataSaida}</p>
-            <p>${reserva.dataSaida}</p>
-        </c:forEach>
+    <div class="col-lg-4 col-lg-offset-4 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <div id="reservas">
+            <h3>RESERVAS</h3>
+            <c:forEach items="${reservas}" var="reserva">
+                <p>Reserva: <big>${reserva.id}</big></p>
+                <p>${reserva.dataSaida}</p>
+                <p>${reserva.dataSaida}</p>
+            </c:forEach>
+        </div>
+        
+    </div>
+    
+    <div id="botoes" class="col-lg-4 col-lg-offset-4 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <a href="manipulaHotel.jsp" class="btn btn-primary">Novo Hotel <span class="glyphicon glyphicon-plus"></span></a>
+        <a href="manipulaQuarto.jsp" class="btn btn-primary">Novo Quarto<span class="glyphicon glyphicon-plus"></span></a>
     </div>
 
 </div>

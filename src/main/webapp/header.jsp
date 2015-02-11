@@ -14,9 +14,10 @@
         <link href= "css/styles.css" rel="stylesheet">
         <script src="libs/bootstrap/js/jquery.min.js "></script>
         <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+        <link href="css/hotel.css" rel="stylesheet">
     </head>
     <body>
-        <div class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <a href="index.jsp" class="navbar-brand">Web Services</a>
                 <button class="navbar-toggle" data-toggle = "collapse" data-target = ".custonNavHeaderCollapse">
@@ -29,8 +30,7 @@
                         <li><a href="Hotel.jsp">Hoteis</a></li>
                     </ul>
                 </div>
-
             </div>
-        </div>
+        </nav>
         <!--    </body>
         </html>-->
