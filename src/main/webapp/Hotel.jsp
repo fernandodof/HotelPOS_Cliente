@@ -50,7 +50,7 @@
     
     <div id="botoes" class="col-lg-4 col-lg-offset-4 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
         <a href="manipulaHotel.jsp" class="btn btn-primary">Novo Hotel <span class="glyphicon glyphicon-plus"></span></a>
-        <a href="manipulaQuarto.jsp" class="btn btn-primary">Novo Quarto<span class="glyphicon glyphicon-plus"></span></a>
+        <a href="manipulaQuarto.jsp" class="btn btn-primary">Novo Quarto <span class="glyphicon glyphicon-plus"></span></a>
     </div>
 
 </div>

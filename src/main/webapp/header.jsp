@@ -10,11 +10,11 @@
     <head>
         <title>JSP Page</title
         <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link href= "libs/bootstrap/css/bootstrap.min.slate.css" rel="stylesheet">
-        <link href= "css/styles.css" rel="stylesheet">
-        <script src="libs/bootstrap/js/jquery.min.js "></script>
-        <script src="libs/bootstrap/js/bootstrap.min.js"></script>
-        <link href="css/hotel.css" rel="stylesheet">
+        <link href= "/HotelPOS_Cliente/libs/bootstrap/css/bootstrap.min.slate.css" rel="stylesheet">
+        <link href= "/HotelPOS_Cliente/css/styles.css" rel="stylesheet">
+        <script src="/HotelPOS_Cliente/libs/bootstrap/js/jquery.min.js "></script>
+        <script src="/HotelPOS_Cliente/libs/bootstrap/js/bootstrap.min.js"></script>
+        <link href="/HotelPOS_Cliente/css/hotel.css" rel="stylesheet">
     </head>
     <body>
         <nav class="navbar navbar-default navbar-static-top">
@@ -27,7 +27,8 @@
                 </button>
                 <div class="collapse navbar-collapse custonNavHeaderCollapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="Hotel.jsp">Hoteis</a></li>
+                        <li><a href="/HotelPOS_Cliente/Hotel.jsp">Hoteis</a></li>
+                        <li><a href="/HotelPOS_Cliente/Passagens/Pasagens.jsp">Passagens</a></li>
                     </ul>
                 </div>
             </div>
