@@ -29,6 +29,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/HotelPOS_Cliente/Hotel.jsp">Hoteis</a></li>
                         <li><a href="/HotelPOS_Cliente/Passagens/Pasagens.jsp">Passagens</a></li>
+                        <li><a href="/HotelPOS_Cliente/Veiculos/Locadoras.jsp">Veiculos</a></li>
                     </ul>
                 </div>
             </div>

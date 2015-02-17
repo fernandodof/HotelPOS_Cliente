@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.pos.hotel.servlets;
+package br.com.pos.hotel.servlets.veiculos;
 
-import br.com.pos.hotel.cliente.Consumidor;
-import br.com.pos.hotel.services.Hotel;
-import br.com.pos.hotel.services.Quarto;
+import br.com.pos.hotel.cliente.ConsumidorVeiculos;
+import com.pos.services.Carro;
+import com.pos.services.Pessoa;
 import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -22,14 +22,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.datatype.DatatypeConfigurationException;
 
 /**
  *
  * @author Fernando
  */
-@WebServlet(name = "FazerReserva", urlPatterns = {"/FazerReserva"})
-public class FazerReserva extends HttpServlet {
+@WebServlet(name = "ReservarVeiculo", urlPatterns = {"/ReservarVeiculo"})
+public class ReservarVeiculo extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -42,40 +41,48 @@ public class FazerReserva extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            request.setCharacterEncoding("UTF-8");
+            response.setContentType("text/html;charset=UTF-8");
 
-            Consumidor consumidor = new Consumidor();
+            ConsumidorVeiculos consumidorVeiculos = new ConsumidorVeiculos();
 
             String nomePessoa = request.getParameter("nomePessoa");
             String documento = request.getParameter("documento");
 
+            Pessoa pessoa = new Pessoa();
+
+            pessoa.setNome(nomePessoa);
+            pessoa.setDocumento(documento);
+
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-            Date dataEntrada = df.parse(request.getParameter("dataEntrada"));
-            System.out.println(dataEntrada.toString());
+            Date dataInicio = df.parse(request.getParameter("dataInicio"));
+            System.out.println(dataInicio.toString());
             GregorianCalendar cal = new GregorianCalendar();
-            cal.setTime(dataEntrada);
-            XMLGregorianCalendarImpl dataEntradaXML = new XMLGregorianCalendarImpl(cal);
+            cal.setTime(dataInicio);
+            XMLGregorianCalendarImpl dataInicioXML = new XMLGregorianCalendarImpl(cal);
 
-            Date dataSaida = df.parse(request.getParameter("dataSaida"));
-            System.out.println(dataSaida.toString());
+            Date dataFim = df.parse(request.getParameter("dataFim"));
+            System.out.println(dataFim.toString());
             GregorianCalendar cal1 = new GregorianCalendar();
-            cal1.setTime(dataSaida);
-            XMLGregorianCalendarImpl dataSaidaXML = new XMLGregorianCalendarImpl(cal1);
-            boolean retornoReserva = consumidor.reservar(((Hotel) request.getSession().getAttribute("hotel")).getId(),
-                    ((Quarto) request.getSession().getAttribute("quarto")).getId(), nomePessoa, documento, dataEntradaXML, dataSaidaXML);
+            cal1.setTime(dataFim);
+            XMLGregorianCalendarImpl dataFimXML = new XMLGregorianCalendarImpl(cal1);
 
-            if (retornoReserva) {
-                request.setAttribute("reserva", true);
-            } else {
-                request.setAttribute("reserva", false);
-            }
-            request.getRequestDispatcher("reserva.jsp").forward(request, response);
+            int idVeiculo = ((Carro) request.getSession().getAttribute("veiculo")).getId();
 
+            consumidorVeiculos.reservarVeiculo(idVeiculo, pessoa, dataInicioXML, dataFimXML);
+
+            request.setAttribute("reserva", true);
+            System.out.println("SERVLET RESERVAR VEICULO");
+            request.getRequestDispatcher("Veiculos/fazerReserva.jsp").forward(request, response);
+//            response.sendRedirect("/HotelPOS_Cliente/Veiculos/fazerReserva.jsp");
         } catch (ParseException ex) {
-            Logger.getLogger(FazerReserva.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ReservarVeiculo.class.getName()).log(Level.SEVERE, null, ex);
             request.setAttribute("reserva", false);
-            request.getRequestDispatcher("reserva.jsp").forward(request, response);
+            request.getRequestDispatcher("Veiculos/fazerReserva.jsp").forward(request, response);
+        } catch (Exception e) {
+            request.setAttribute("reserva", false);
+            request.getRequestDispatcher("Veiculos/fazerReserva.jsp").forward(request, response);
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

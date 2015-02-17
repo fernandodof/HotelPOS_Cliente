@@ -39,12 +39,12 @@ public class ConsumidorPassagens {
     public List<Voo> getTodosOsVoos(){
         return port.getTodosVoos();
     }
-    
-    public boolean venderPasssagem(Voo voo, Usuario usuario){
-        return port.venderPassagem(voo, usuario);
-    }
-    
-    
-    
+//    
+//    public boolean venderPasssagem(Voo voo, Usuario usuario){
+//        return port.venderPassagem(voo, usuario);
+//    }
+//    
+//    
+//    
     
 }
