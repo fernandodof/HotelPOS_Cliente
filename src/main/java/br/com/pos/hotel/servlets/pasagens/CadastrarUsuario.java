@@ -3,7 +3,6 @@ package br.com.pos.hotel.servlets.pasagens;
 import br.com.pos.hotel.cliente.ConsumidorPassagens;
 import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,8 +15,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import service.AgenciaService;
-import service.SalvarUsuario;
 import service.Usuario;
 
 /**

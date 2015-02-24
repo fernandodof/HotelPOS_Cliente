@@ -52,5 +52,9 @@ public class ConsumidorPassagens {
         return port.venderPassagem(voo, usuario);
     }                
     
+    public Voo getVooPorId(long id){
+        return port.getVooPorId(id);        
+    }
+    
     
 }
