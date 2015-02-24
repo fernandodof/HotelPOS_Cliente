@@ -26,21 +26,6 @@ public interface ServicoInterno {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addHotel", targetNamespace = "http://services.hotel.pos.com.br/", className = "br.com.pos.hotel.services.AddHotel")
-    @ResponseWrapper(localName = "addHotelResponse", targetNamespace = "http://services.hotel.pos.com.br/", className = "br.com.pos.hotel.services.AddHotelResponse")
-    @Action(input = "http://services.hotel.pos.com.br/ServicoInterno/addHotelRequest", output = "http://services.hotel.pos.com.br/ServicoInterno/addHotelResponse")
-    public boolean addHotel(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Hotel arg0);
-
-    /**
-     * 
      * @param arg1
      * @param arg0
      * @return
@@ -56,5 +41,20 @@ public interface ServicoInterno {
         int arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         Quarto arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addHotel", targetNamespace = "http://services.hotel.pos.com.br/", className = "br.com.pos.hotel.services.AddHotel")
+    @ResponseWrapper(localName = "addHotelResponse", targetNamespace = "http://services.hotel.pos.com.br/", className = "br.com.pos.hotel.services.AddHotelResponse")
+    @Action(input = "http://services.hotel.pos.com.br/ServicoInterno/addHotelRequest", output = "http://services.hotel.pos.com.br/ServicoInterno/addHotelResponse")
+    public boolean addHotel(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Hotel arg0);
 
 }

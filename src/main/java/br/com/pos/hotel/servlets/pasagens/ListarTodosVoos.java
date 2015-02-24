@@ -3,6 +3,7 @@ package br.com.pos.hotel.servlets.pasagens;
 import br.com.pos.hotel.cliente.ConsumidorPassagens;
 import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,33 +21,20 @@ import service.Voo;
 
 /**
  *
- * @author Fernando
+ * @author filipe
  */
-@WebServlet(name = "BuscaVoosPorData", urlPatterns = {"/Passagens/BuscaVoosPorData"})
-public class BuscaVoosPorData extends HttpServlet {
+@WebServlet(name = "ListarTodosVoos", urlPatterns = {"/Passagens/ListarTodosVoos"})
+public class ListarTodosVoos extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {            
-            ConsumidorPassagens passagens = new ConsumidorPassagens();
-                        
-            GregorianCalendar cal = new GregorianCalendar();
-            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-            
-            
-            Date data = df.parse(request.getParameter("data"));
-            cal.setTime(data);
-            XMLGregorianCalendarImpl dataNascimentoXML = new XMLGregorianCalendarImpl(cal);
-            
-            List<Voo> voosPorData = passagens.getVoosPorData(dataNascimentoXML);
-            
-            request.getSession().setAttribute("voos", voosPorData);
-            dataNascimentoXML.toGregorianCalendar().getTime();
-            
-            response.sendRedirect("/HotelPOS_Cliente/Passagens/listaDeVoos.jsp");
-        } catch (ParseException ex) {
-            Logger.getLogger(BuscaVoosPorData.class.getName()).log(Level.SEVERE, null, ex);
-        }                
+
+        ConsumidorPassagens passagens = new ConsumidorPassagens();
+        List<Voo> voosPorData = passagens.getTodosOsVoos();
+        request.getSession().setAttribute("voos", voosPorData);
+
+        response.sendRedirect("/HotelPOS_Cliente/Passagens/listaDeVoos.jsp");
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -84,6 +84,21 @@ public interface ReservaService {
      * 
      * @param arg0
      * @return
+     *     returns br.com.pos.hotel.services.Hotel
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getHotelById", targetNamespace = "http://services.hotel.pos.com.br/", className = "br.com.pos.hotel.services.GetHotelById")
+    @ResponseWrapper(localName = "getHotelByIdResponse", targetNamespace = "http://services.hotel.pos.com.br/", className = "br.com.pos.hotel.services.GetHotelByIdResponse")
+    @Action(input = "http://services.hotel.pos.com.br/ReservaService/getHotelByIdRequest", output = "http://services.hotel.pos.com.br/ReservaService/getHotelByIdResponse")
+    public Hotel getHotelById(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
      *     returns br.com.pos.hotel.services.Quarto
      */
     @WebMethod
@@ -124,20 +139,5 @@ public interface ReservaService {
         XMLGregorianCalendar arg4,
         @WebParam(name = "arg5", targetNamespace = "")
         XMLGregorianCalendar arg5);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns br.com.pos.hotel.services.Hotel
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getHotelById", targetNamespace = "http://services.hotel.pos.com.br/", className = "br.com.pos.hotel.services.GetHotelById")
-    @ResponseWrapper(localName = "getHotelByIdResponse", targetNamespace = "http://services.hotel.pos.com.br/", className = "br.com.pos.hotel.services.GetHotelByIdResponse")
-    @Action(input = "http://services.hotel.pos.com.br/ReservaService/getHotelByIdRequest", output = "http://services.hotel.pos.com.br/ReservaService/getHotelByIdResponse")
-    public Hotel getHotelById(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
 
 }

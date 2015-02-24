@@ -3,12 +3,12 @@ package br.com.pos.hotel.servlets.pasagens;
 import br.com.pos.hotel.cliente.ConsumidorPassagens;
 import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -16,36 +16,45 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import service.Voo;
+import service.AgenciaService;
+import service.SalvarUsuario;
+import service.Usuario;
 
 /**
  *
- * @author Fernando
+ * @author filipe
  */
-@WebServlet(name = "BuscaVoosPorData", urlPatterns = {"/Passagens/BuscaVoosPorData"})
-public class BuscaVoosPorData extends HttpServlet {
-
+@WebServlet(name = "CadastrarUsuario", urlPatterns = {"/Passagens/CadastrarUsuario"})
+public class CadastrarUsuario extends HttpServlet {
+    
+    
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {            
-            ConsumidorPassagens passagens = new ConsumidorPassagens();
-                        
-            GregorianCalendar cal = new GregorianCalendar();
+        
+        try {
+            Usuario usuario = new Usuario();
+            ConsumidorPassagens consumidorPassagens = new ConsumidorPassagens();
+            
+            GregorianCalendar cal = new GregorianCalendar();            
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             
             
-            Date data = df.parse(request.getParameter("data"));
-            cal.setTime(data);
+            Date dataNascimento = df.parse(request.getParameter("nascimento"));
+            cal.setTime(dataNascimento);
             XMLGregorianCalendarImpl dataNascimentoXML = new XMLGregorianCalendarImpl(cal);
             
-            List<Voo> voosPorData = passagens.getVoosPorData(dataNascimentoXML);
+            usuario.setDataNascimento(dataNascimentoXML);
+            usuario.setNome(request.getParameter("nome"));            
+            usuario.setCpf(request.getParameter("cpf"));                       
+                        
+            request.getSession().setAttribute("usuario", usuario);
             
-            request.getSession().setAttribute("voos", voosPorData);
-            dataNascimentoXML.toGregorianCalendar().getTime();
+            consumidorPassagens.salvarUsuario(usuario);
             
-            response.sendRedirect("/HotelPOS_Cliente/Passagens/listaDeVoos.jsp");
+            request.getRequestDispatcher("/Passagens/fazerReserva.jsp").forward(request, response);
         } catch (ParseException ex) {
-            Logger.getLogger(BuscaVoosPorData.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CadastrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }                
     }
 

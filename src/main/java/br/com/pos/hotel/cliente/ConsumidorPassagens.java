@@ -8,6 +8,7 @@ package br.com.pos.hotel.cliente;
 import java.util.List;
 import javax.xml.datatype.XMLGregorianCalendar;
 import service.AgenciaService;
+import service.Cidade;
 import service.Passagens;
 import service.Usuario;
 import service.Voo;
@@ -28,23 +29,28 @@ public class ConsumidorPassagens {
     }
     
     public List<Voo> getVoosPorData(XMLGregorianCalendar data){
-        return port.getVoosPorData(data);
-        
+        return port.getVoosPorData(data);        
     }
     
-    public Usuario getUsuario(String login){
-        return port.getUsuario(login);
+    public Voo getVooOrigemDestino(long origem, long destino){
+        return port.getVoo(origem, destino);
+    }
+    
+    public Usuario getUsuario(String cpf){
+        return port.getUsuario(cpf);
     }
     
     public List<Voo> getTodosOsVoos(){
         return port.getTodosVoos();
     }
-//    
-//    public boolean venderPasssagem(Voo voo, Usuario usuario){
-//        return port.venderPassagem(voo, usuario);
-//    }
-//    
-//    
-//    
+    
+    public List<Cidade> getCidades(){
+        return port.getCidades();        
+    }
+    
+    public boolean venderPasssagem(long voo, Usuario usuario){
+        return port.venderPassagem(voo, usuario);
+    }                
+    
     
 }

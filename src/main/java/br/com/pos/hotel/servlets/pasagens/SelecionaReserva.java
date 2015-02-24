@@ -1,52 +1,31 @@
 package br.com.pos.hotel.servlets.pasagens;
 
 import br.com.pos.hotel.cliente.ConsumidorPassagens;
-import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import service.Voo;
 
 /**
  *
- * @author Fernando
+ * @author filipe
  */
-@WebServlet(name = "BuscaVoosPorData", urlPatterns = {"/Passagens/BuscaVoosPorData"})
-public class BuscaVoosPorData extends HttpServlet {
+@WebServlet(name = "SelecionaReserva", urlPatterns = {"/Passagens/SelecionaReserva"})
+public class SelecionaReserva extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {            
-            ConsumidorPassagens passagens = new ConsumidorPassagens();
-                        
-            GregorianCalendar cal = new GregorianCalendar();
-            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-            
-            
-            Date data = df.parse(request.getParameter("data"));
-            cal.setTime(data);
-            XMLGregorianCalendarImpl dataNascimentoXML = new XMLGregorianCalendarImpl(cal);
-            
-            List<Voo> voosPorData = passagens.getVoosPorData(dataNascimentoXML);
-            
-            request.getSession().setAttribute("voos", voosPorData);
-            dataNascimentoXML.toGregorianCalendar().getTime();
-            
-            response.sendRedirect("/HotelPOS_Cliente/Passagens/listaDeVoos.jsp");
-        } catch (ParseException ex) {
-            Logger.getLogger(BuscaVoosPorData.class.getName()).log(Level.SEVERE, null, ex);
-        }                
+
+        long voo = Long.parseLong(request.getParameter("idVoo"));                                
+        
+        
+        
+        request.getSession().setAttribute("vooSelecionado", voo);
+
+        request.getRequestDispatcher("/Passagens/CadastrarUsuario.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -13,47 +13,31 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <div class="container">
-            <h1 class="text-center">Fazer Reserva</h1>
-
-            <div class="col-lg-4 col-lg-offset-4 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                <button class="btn btn-primary" data-toggle="collapse" data-target="#addUsuario">Novo pasageiro <span class="caret"></span></button>
-                <div id="addUsuario" class="collapse">
-                    <h3>Novo passageiro</h3>
-                    <form method="POST" action="#">
-
-                        <div class="form-group">
-                            <input type="text" name="nome" class="form-control" placeholder="Nome">
-                        </div> 
-
-                        <div class="form-group">
-                            <input type="text" name="login" class="form-control" placeholder="Login">
-                        </div> 
-
-                        <div class="form-group">
-                            <input type="password" name="senha" class="form-control" placeholder="Senha">
-                        </div>  
-                        <input type="submit" class="btn btn-success pull-right" value="Cadastrar">
+        <div class="col-lg-4 col-lg-offset-4 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                <div class="voo">
+                    <form method="POST" action="/HotelPOS_Cliente/Passagens/CadastrarUsuario.jsp">
+                        <table class="table"> 
+                            <thead>
+                                <tr>
+                                    <th>Origem</th>
+                                    <th>Destino</th>
+                                    <th>Data</th>
+                                    <th>Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>                                
+                                    <td>${vooSelecionado.origem.nomeCidade}</td>
+                                    <td>${vooSelecionado.destino.nomeCidade}</td>    
+                                    <td><fmt:formatDate pattern="dd/MM/yyyy" value="${vooSelecionado.dataVoo.toGregorianCalendar().getTime()}"/></td>
+                                    <td><fmt:setLocale value="pt_BR"/> <fmt:formatNumber type="currency" minFractionDigits="2" value="${vooSelecionado.valor}"/></tr>
+                                </tr>                                                                                    
+                            </tbody>
+                        </table>                                                                                                
+                        <input type="hidden" name="idVoo" value="${vooSelecionado.getId()}">
+                        <button class="btn btn-success pull-right">Reservar</button>
                     </form>
                 </div>
-
-                <div id="reservar">
-                    <p class="btn-danger">****MOSTRAR DADOS DO VOO AQUI****</p>
-                    <h2>Dados da reserva</h2>
-                    <form method="POST" action="#">
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="loginPassageiro" placeholder="Login">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="senhaPassageiro" placeholder="Senha">
-                        </div>
-                        <input type="submit" class="btn btn-success pull-right" value="Finalizar">
-                    </form>
-                </div>
-
             </div>
-
-
-        </div>
     </body>
 </html>
